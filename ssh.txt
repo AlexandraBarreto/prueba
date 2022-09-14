@@ -1,4 +1,4 @@
-hola mundo 	
+hola mundo, otra vez	
 configure terminal
 hostname R1_GYE
 ip domain-name assr.com
