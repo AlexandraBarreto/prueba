@@ -1,0 +1,31 @@
+ 	
+configure terminal
+hostname R1_GYE
+ip domain-name assr.com
+
+crypto key generate rsa general-keys modulus 1024
+
+
+ip ssh version 2 o 1
+
+ip ssh time-out 120
+ip ssh authentication-retries 3
+
+username admin privilege 15 secret admin
+
+line vty 0 4 
+transport input ssh telnet
+login local
+exit
+	
+
+interface FastEthernet 0/0
+description WAN-HACIA SERVIDOR UBUNTU
+ip address 10.0.2.2 255.255.255.0
+no shutdown
+do wr
+
+k)	Comprobar conectividad usando ping desde la máquina virtual hacia el router, y viceversa.
+
+
+ 	ssh -l admin@10.0.2.2
